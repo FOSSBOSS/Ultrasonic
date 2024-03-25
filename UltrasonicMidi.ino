@@ -10,11 +10,10 @@ given thier proximity. The ultra sonic field is a cone
 around the front face of each sensor.
 
 
-Teensy 4.1
+built on a Teensy 4.1
+to configure the Teensy as a MIDI device in the Arduino IDE:
+ goto (Menu) tools,USB-Type: MIDI
 */
-// goto (Menu) tools,USB-Type: MIDI
-//yello trig
-//blue echo
 
 // Sensor IO
 #define TRIG_PIN_1 2
@@ -95,9 +94,7 @@ void loop() {
     usbMIDI.sendNoteOff(note4,0,1); 
 
   }
-/**/
-  
-  delay(100); // scan velocity
+
 }
 
 int getDistance(int triggerPin, int echoPin) {
@@ -108,5 +105,7 @@ int getDistance(int triggerPin, int echoPin) {
   digitalWrite(triggerPin, LOW);
   long duration = pulseIn(echoPin, HIGH);
   int distance = duration * 0.034 / 2;
+  // The value 0.034 corresponds to the speed of sound in centimeters per microsecond through air.
+  // Divided by 2, because the signal goes out and comes back. durration * 0.17 would also work
   return distance;
 }
