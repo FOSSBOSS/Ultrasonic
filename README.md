@@ -7,5 +7,5 @@ Features comming soon: <br>
 
 <br>
 Project Goals: <br>
-To make a sympathetic payable instrument. 
+To make a sympathetic playable instrument. 
     
